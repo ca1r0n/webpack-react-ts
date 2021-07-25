@@ -1,0 +1,15 @@
+@mixin text-gradient($linear-gradient){
+  background: $linear-gradient;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+$width: 1920;
+$fontBreakPoint: $md;
+@mixin text-adaptive($max,$min){
+  $diff: $max - $min;
+  font-size: calc(#{$min + px} + #{$diff} * (100vw / #{$width}));
+  @media (max-width: #{$fontBreakPoint}){
+    font-size: calc(#{$min + px} + #{$diff} * ((100vw - 360px) / #{$width}))
+  }
+}

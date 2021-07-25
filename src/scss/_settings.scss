@@ -1,0 +1,18 @@
+html {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: "asd", sans-serif;
+  overflow-x: hidden;
+}
+
+.site-container {
+  overflow: hidden;
+}
+.container {
+  margin: 0 auto;
+  padding: 0 15px;
+  max-width: 1170px;
+}

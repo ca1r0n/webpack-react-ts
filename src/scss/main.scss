@@ -1,0 +1,18 @@
+// VENDOR   
+@import "./vendor/reset";
+
+// GLOBAL
+@import "./fonts";
+@import "./settings";
+@import "./vars";
+
+// TOOLS
+@import "./mixins/font-face";
+@import "./mixins/mini";
+
+//components
+@import "components/headings";  // h1-h6
+@import "components/buttons";
+
+
+//pages
