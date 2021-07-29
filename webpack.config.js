@@ -6,7 +6,7 @@ var config = {
     resolve: {
         extensions: [".js", ".ts", ".jsx", ".tsx", ".json"],
     },
-    entry: "./src/app.tsx",
+    entry: "./src/index.tsx",
     output: {
         path: path.resolve(__dirname, "dist"),
         filename: "index.js",
@@ -20,14 +20,12 @@ var config = {
     },
     module: {
         rules: [
-            //загрузчик для jsx
             {
-                test: /\.[tj]sx?$/, // определяем тип файлов
+                test: /\.[tj]sx?$/,
                 use: ["ts-loader"],
             },
             {
                 test: /\.scss$/,
-                // use: ['css-loader','style-loader']
                 use: [
                     "style-loader",
                     {
@@ -41,15 +39,29 @@ var config = {
                         },
                     },
                     {
-                        loader: 'postcss-loader',
-                        
+                        loader: "postcss-loader",
                     },
                     {
-                        loader: 'sass-loader',
+                        loader: "sass-loader",
                         options: {
-                            sourceMap: true
-                        }
-                    }
+                            sourceMap: true,
+                        },
+                    },
+                ],
+            },
+            {
+                test: /\.css?$/,
+                use: ["style-loader", "css-loader", "postcss-loader"],
+            },
+            {
+                test: /\.(png|jpg|svg)$/i,
+                use: [
+                    {
+                        loader: "url-loader",
+                        options: {
+                            limit: 8192,
+                        },
+                    },
                 ],
             },
         ],
@@ -63,6 +75,7 @@ var config = {
 }
 
 module.exports = (mode, argv) => {
+    
     if (mode == "development") {
         // DEVELOPMENT
         config.mode = "development"
