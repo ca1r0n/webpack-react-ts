@@ -1,5 +1,10 @@
 {
     "cSpell.words": [
         "browserslist"
+    ],
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "cSpell.ignoreWords": [
+        "lupa",
+        "mixins"
     ]
 }

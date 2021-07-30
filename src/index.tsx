@@ -3,7 +3,7 @@ const ReactDOM = require("react-dom")
 
 import global from "./scss/main.scss"
 
-import App from './Components/App' 
+import App from "./Components/App"
 
 ReactDOM.render(
     <div className={global.siteContainer}>
@@ -11,4 +11,3 @@ ReactDOM.render(
     </div>,
     document.getElementById("root")
 )
-    
