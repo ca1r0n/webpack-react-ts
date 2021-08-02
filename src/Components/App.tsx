@@ -3,14 +3,12 @@ import React from "react"
 import global from "../scss/main.scss"
 import style from "./style.scss"
 
-import Header from "./Header/Header"
-import ToDo from "./ToDo/ToDo"
+import Example from './Example/Example'
 
 export default function App() {
     return (
-        <>
-            {/* <Header /> */}
-            <ToDo />
-        </>
+        <div>
+            <Example />
+        </div>
     )
 }
